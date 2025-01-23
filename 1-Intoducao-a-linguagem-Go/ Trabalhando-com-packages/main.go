@@ -2,24 +2,24 @@ package main
 
 import (
 	"fmt"
+	"gohelloword/funcionarios"
 )
 
-type Pessoa struct {
-	nome    string
-	idade   int
-	salario int
-}
-
 func main() {
+	pessoa := &funcionarios.Pessoa{
+		nome:    "Thadeu",
+		idade:   40,
+		salario: 100,
+	}
 
 	salFunc := make(map[string]int)
-	salFunc["Thadeu"] = 10
-	salFunc["Marcio"] = 20
+	salFunc["Marcio"] = 10
+	salFunc["Thadeu"] = 20
 
-	sal, exist := salFunc["Marcioabc"]
+	sal, exist := salFunc["Marcio"]
 	fmt.Println(sal, exist)
-	totalSal := len(salFunc)
-	fmt.Println("Total de funcionários:", totalSal)
+	// totalSal := len(salFunc)
+	// fmt.Println("Total de funcionários:", totalSal)
 	// pessoa2 := new(Pessoa)
 	// pessoa2.nome = "Marcio"
 	// pessoa2.idade = 40
@@ -37,10 +37,6 @@ func main() {
 	// newSalary, bonus := addSalary(salario, 10)
 	// fmt.Println("Novo salário:", newSalary)
 	// fmt.Println("Novo bonus:", bonus)
-}
-
-func (p *Pessoa) addSalaryPessoa(bonus int) {
-	p.salario += bonus
 }
 
 func setName(name string) {
